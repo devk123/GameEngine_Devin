@@ -9,10 +9,8 @@ void Engine::Start(sf::RenderWindow* win)
 	}
 }
 
-Engine::Engine()
-{
-	bQuit = false;
-}
+Engine::Engine() = default;
+
 
 Engine::~Engine()
 {
@@ -29,4 +27,16 @@ void Engine::Update()
 			window->close();
 		}
 	}
+}
+
+Engine& Engine::GetInstance()
+{
+	static Engine instance;
+	return instance;
+}
+
+void Engine::AddSystem(ECS::EntitySystem* newSys)
+{
+	world->registerSystem(newSys);
+	world->enableSystem(newSys);
 }
