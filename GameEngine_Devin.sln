@@ -5,6 +5,8 @@ VisualStudioVersion = 17.1.32228.430
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GameEngine_Devin", "GameEngine_Devin\GameEngine_Devin.vcxproj", "{790CE149-B22D-4333-8F37-23B5C5BED2F8}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MyGame", "MyGame\MyGame.vcxproj", "{F380FD74-4001-4901-9225-96223419490E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,14 @@ Global
 		{790CE149-B22D-4333-8F37-23B5C5BED2F8}.Release|x64.Build.0 = Release|x64
 		{790CE149-B22D-4333-8F37-23B5C5BED2F8}.Release|x86.ActiveCfg = Release|Win32
 		{790CE149-B22D-4333-8F37-23B5C5BED2F8}.Release|x86.Build.0 = Release|Win32
+		{F380FD74-4001-4901-9225-96223419490E}.Debug|x64.ActiveCfg = Debug|x64
+		{F380FD74-4001-4901-9225-96223419490E}.Debug|x64.Build.0 = Debug|x64
+		{F380FD74-4001-4901-9225-96223419490E}.Debug|x86.ActiveCfg = Debug|Win32
+		{F380FD74-4001-4901-9225-96223419490E}.Debug|x86.Build.0 = Debug|Win32
+		{F380FD74-4001-4901-9225-96223419490E}.Release|x64.ActiveCfg = Release|x64
+		{F380FD74-4001-4901-9225-96223419490E}.Release|x64.Build.0 = Release|x64
+		{F380FD74-4001-4901-9225-96223419490E}.Release|x86.ActiveCfg = Release|Win32
+		{F380FD74-4001-4901-9225-96223419490E}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
