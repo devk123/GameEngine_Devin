@@ -19,6 +19,7 @@ int main(int argc, char* args[]) {
 	gameEngine.AddSystem(new AnimationSystem());
 	gameEngine.AddSystem(new InputSystem(&window));
 	gameEngine.AddSystem(new MovementSystem());
+	gameEngine.AddSystem(new PhysicsSystem());
 
 	background = gameEngine.world->create();
 	stickFigure = gameEngine.world->create();
@@ -31,11 +32,13 @@ int main(int argc, char* args[]) {
 	stickFigure->assign<Transform>(300, 300);
 	stickFigure->assign<Sprite2D>("../Debug/Pics/herosheet.png");
 	stickFigure->assign<Animator>(32, 32, 200.0f, 4, 1);
+	stickFigure->assign<BoxCollider>();
 
 	tux->assign<Transform>(200, 200, 0.1f, 0.1f);
 	tux->assign<Sprite2D>("../Debug/Pics/tux_from_linux.png");
 	tux->assign<Animator>(56, 72, 2000.0f, 3, 9);
 	tux->assign<InputController>();
+	tux->assign<BoxCollider>();
 	tux->get<Animator>()->currentRow = 0;
 
 	std::cout << background->getEntityId() << " is the entity id." << std::endl;
