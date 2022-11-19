@@ -3,18 +3,20 @@
 void Engine::Start(sf::RenderWindow* win)
 {
 	this->window = win;
+	mainCamera = MainCamera(sf::Vector2f(this->window->getSize().x / 2,this->window->getSize().y / 2));
 	while (window->isOpen() == true)
 	{
 		this->Update();
 	}
 }
 
-Engine::Engine() = default;
-
-
-Engine::~Engine()
+Engine::Engine()
 {
+	bQuit = false;
 }
+
+
+Engine::~Engine() = default;
 
 void Engine::Update()
 {
@@ -29,6 +31,8 @@ void Engine::Update()
 	}
 
 	world->tick(10.0f);
+
+	mainCamera-> Update(world, 10.0f, window);
 }
 
 Engine& Engine::GetInstance()
