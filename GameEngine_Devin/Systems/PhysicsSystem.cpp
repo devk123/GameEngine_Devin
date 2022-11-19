@@ -189,18 +189,14 @@ void PhysicsSystem::tick(ECS::World* world, float deltaTime)
                     collider->Update(transform->xPos, transform->yPos, sprite->picture.getTextureRect().width, sprite->picture.getTextureRect().height);
             });
 
-        world->each<BoxCollider, Transform, Tag>(
+        world->each<BoxCollider>(
             [&](ECS::Entity* touchingEntity,
-                ECS::ComponentHandle<BoxCollider> touchingCollider,
-                ECS::ComponentHandle<Transform> transform1,
-                ECS::ComponentHandle<Tag> tag1
+                ECS::ComponentHandle<BoxCollider> touchingCollider
                 )->void 
             {
-                    world->each<BoxCollider, Transform, Tag>(
+                    world->each<BoxCollider>(
                         [&](ECS::Entity* touchedEntity,
-                            ECS::ComponentHandle<BoxCollider> touchedCollider,
-                            ECS::ComponentHandle<Transform> transform2,
-                            ECS::ComponentHandle<Tag> tag2
+                            ECS::ComponentHandle<BoxCollider> touchedCollider
                             )->void {
                                 // Statement to avoid comparing the same entity to itself
                                 if (touchingEntity->getEntityId() == touchedEntity->getEntityId() || !isColliding(touchingCollider, touchedCollider)) {

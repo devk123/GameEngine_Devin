@@ -11,6 +11,7 @@
 #include "Systems/MovementSystem.h"
 #include "Systems/InputSystem.h"
 #include "Systems/PhysicsSystem.h"
+#include "Tile.h"
 
 
 class MainCamera;
