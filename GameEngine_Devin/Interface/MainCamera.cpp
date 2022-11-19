@@ -7,6 +7,7 @@ MainCamera::MainCamera(sf::Vector2f pivot)
 
 void MainCamera::Update(ECS::World* world, float deltaTime, sf::RenderWindow* window)
 {
+	sf::Vector2f _windowSize(window->getSize().x, window->getSize().y);
 	float cameraMoveSpeed = 0.1f;
 
 	cameraView.setSize(window->getSize().x, window->getSize().y);
@@ -28,7 +29,7 @@ void MainCamera::Update(ECS::World* world, float deltaTime, sf::RenderWindow* wi
 
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down) == true)
 	{
-		cameraView.move(0, -cameraMoveSpeed * deltaTime);
+		cameraView.move(0, cameraMoveSpeed * deltaTime);
 	}
 	window->setView(cameraView);
 }

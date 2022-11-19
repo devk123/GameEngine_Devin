@@ -2,7 +2,7 @@
 
 void AnimationSystem::tick(ECS::World* world, float deltaTime)
 {
-	if (States::GetPausedState == false)
+	if (States::GetPausedState() == false)
 	{
 		world->each <Animator, Sprite2D>(
 			[&](ECS::Entity* entity,

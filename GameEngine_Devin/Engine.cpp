@@ -1,11 +1,18 @@
 #include "Engine.h"
 
+
+
 void Engine::Start(sf::RenderWindow* win)
 {
 	this->window = win;
-	mainCamera = new MainCamera(sf::Vector2f(this->window->getSize().x / 2,this->window->getSize().y / 2));
+
+	mainCamera = new MainCamera(sf::Vector2f(
+		win->getSize().x / 2,
+		win->getSize().y / 2));
+
 	pauseMenu = new PauseMenu(win);
-	while (window->isOpen() == true)
+
+	while (win->isOpen() == true)
 	{
 		this->Update();
 	}

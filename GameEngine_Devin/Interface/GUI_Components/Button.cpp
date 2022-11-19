@@ -16,7 +16,7 @@ Button::Button(sf::Vector2f size, sf::Color color, std::string text)
 	this->buttonBG.setPosition(sf::Vector2f(0, 0));
 	this->buttonText.setCharacterSize(11);
 	this->buttonText.setFillColor(sf::Color::White);
-	this->buttonText.setPosition(0, 0);
+	this->buttonText.setPosition(sf::Vector2f(0, 0));
 	this->buttonText.setString(text);
 }
 

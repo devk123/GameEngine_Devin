@@ -3,21 +3,26 @@
 #include "sfml/Graphics.hpp"
 #include "ECS.h"
 #include "Component.h"
+#include "Interface/MainCamera.h"
+#include "Interface/PauseMenu.h"
+
 #include "Systems/RenderingSystem.h"
 #include "Systems/AnimationSystem.h"
 #include "Systems/MovementSystem.h"
 #include "Systems/InputSystem.h"
 #include "Systems/PhysicsSystem.h"
-#include "Interface/MainCamera.h"
-#include "Interface/PauseMenu.h"
+
+
+class MainCamera;
+class PauseMenu;
 
 class Engine
 {
 public: 
 	sf::RenderWindow* window = nullptr;
 	ECS::World* world = nullptr;
-	class MainCamera mainCamera;
-	class PauseMenu pauseMenu;
+	MainCamera* mainCamera;
+	PauseMenu* pauseMenu;
 
 private:
 	bool bQuit;
